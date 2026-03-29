@@ -14,7 +14,8 @@ import {
   MagnifyingGlassIcon,
   VideoIcon,
   ArrowRightIcon,
-  ChatBubbleIcon
+  ChatBubbleIcon,
+  TargetIcon
 } from "@radix-ui/react-icons";
 
 export default function HomePage() {
@@ -23,7 +24,7 @@ export default function HomePage() {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center pt-24 pb-16 overflow-hidden">
+      <section className="relative min-h-[100svh] lg:min-h-[90vh] flex flex-col justify-center pt-32 pb-16 lg:pt-32 lg:pb-20 overflow-hidden">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <Image 
@@ -37,23 +38,20 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-linear-to-t from-(--background) to-transparent"></div>
         </div>
 
-        <div className="container mx-auto px-4 md:px-6 relative z-10">
+        <div className="container mx-auto px-4 md:px-6 relative z-10 flex-1 flex items-center">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="max-w-3xl"
+            className="max-w-3xl relative z-20 w-full"
           >
-            <div className="inline-block px-4 py-1.5 rounded-full border border-white/20 glass mb-6">
-              <span className="text-white text-sm font-semibold tracking-wider">RC: 7060918</span>
-            </div>
             <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight">
               YOUR SAFETY, <br/><span className="text-femack-cyan">OUR PRIORITY!</span>
             </h1>
             <p className="text-lg md:text-xl text-white/80 mb-10 leading-relaxed max-w-2xl">
               Femack Security Limited is a premier security services provider headquartered in Lagos. We deliver comprehensive solutions integrating advanced technology and highly trained personnel to protect your lives, assets, and reputation.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 mb-4">
               <Link href="/services" className="flex items-center justify-center gap-3 bg-femack-cyan hover:bg-femack-cyan-dark text-white px-8 py-4 rounded-full font-semibold transition-all shadow-lg hover:shadow-[0_0_20px_rgba(0,163,224,0.6)]">
                 Explore Services <ArrowRightIcon className="w-5 h-5" />
               </Link>
@@ -61,7 +59,88 @@ export default function HomePage() {
                 Request a Consultation <ChatBubbleIcon className="w-5 h-5" />
               </Link>
             </div>
+
+            {/* Mobile-Only Feature Highlights */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+              className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-4 lg:hidden max-w-lg"
+            >
+              <div className="glass border border-white/20 p-4 rounded-2xl flex items-center gap-4">
+                <TargetIcon className="w-6 h-6 text-femack-cyan shrink-0" />
+                <span className="text-white text-sm font-semibold leading-tight mt-0.5">Top Tier Security Standards</span>
+              </div>
+              <div className="glass border border-white/20 p-4 rounded-2xl flex items-center gap-4">
+                <GlobeIcon className="w-6 h-6 text-femack-cyan shrink-0" />
+                <span className="text-white text-sm font-semibold leading-tight mt-0.5">24/7 Active Monitoring</span>
+              </div>
+              <div className="glass border border-white/20 p-4 rounded-2xl flex items-center gap-4 sm:col-span-2">
+                <span className="text-2xl font-black text-femack-cyan shrink-0">100%</span>
+                <span className="text-white text-sm font-semibold leading-tight mt-0.5">Govt. Certified Professionals</span>
+              </div>
+            </motion.div>
           </motion.div>
+
+          {/* Right Content - Abstract Floating Cards (Absolutely positioned to never squeeze text) */}
+          <div className="hidden lg:flex absolute right-0 xl:right-6 top-1/2 -translate-y-1/2 w-[350px] xl:w-[450px] scale-90 xl:scale-100 origin-right h-[500px] items-center justify-center z-10 pointer-events-none">
+            {/* Decorative Blur */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-femack-cyan/20 rounded-full blur-[80px]"></div>
+
+            {/* Card 1 */}
+            <motion.div 
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="absolute top-[10%] left-[5%] glass border border-white/20 p-6 rounded-2xl shadow-2xl w-64 backdrop-blur-md"
+            >
+              <div className="flex items-center gap-4 mb-1">
+                <div className="w-12 h-12 rounded-full bg-femack-cyan/20 flex items-center justify-center text-femack-cyan shrink-0">
+                  <TargetIcon className="w-6 h-6" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-lg text-white">Top Tier</h4>
+                  <p className="text-white/70 text-xs uppercase tracking-wider font-semibold">Security Standards</p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Card 2 */}
+            <motion.div 
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="absolute bottom-[10%] left-[15%] glass border border-white/20 p-6 rounded-2xl shadow-2xl w-[300px] backdrop-blur-md z-10"
+            >
+              <div className="flex items-start gap-4">
+                <div className="relative shrink-0">
+                  <div className="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400">
+                    <GlobeIcon className="w-6 h-6" />
+                  </div>
+                  <span className="absolute -top-1 -right-1 flex h-3 w-3">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-femack-cyan opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-3 w-3 bg-femack-cyan"></span>
+                  </span>
+                </div>
+                <div>
+                  <h4 className="font-bold text-lg text-white">24/7 Active Monitoring</h4>
+                  <p className="text-white/70 text-sm mt-1 leading-relaxed">Real-time surveillance & rapid response capabilities.</p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Card 3 */}
+            <motion.div 
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="absolute top-[35%] right-[0%] glass border border-femack-cyan/30 bg-femack-navy/60 p-6 rounded-2xl shadow-2xl w-56 backdrop-blur-md"
+            >
+              <h3 className="text-4xl font-extrabold text-femack-cyan mb-2">100%</h3>
+              <p className="text-white font-bold text-lg leading-tight mb-1">Fully Licensed</p>
+              <p className="text-white/60 text-sm">Govt. Accredited & Certified Professionals</p>
+            </motion.div>
+          </div>
         </div>
       </section>
 
@@ -201,8 +280,8 @@ export default function HomePage() {
           </div>
           
           <div className="mt-16 text-center">
-            <Link href="/services" className="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-femack-cyan text-femack-cyan font-bold rounded-full hover:bg-femack-cyan hover:text-white transition-colors duration-300">
-              View All Services
+            <Link href="/services" className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-transparent border-2 border-femack-cyan text-femack-cyan font-bold rounded-full hover:bg-femack-cyan hover:text-white transition-colors duration-300">
+              View All Services <ArrowRightIcon className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
         </div>
