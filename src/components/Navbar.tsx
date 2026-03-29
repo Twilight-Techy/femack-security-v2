@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
@@ -17,6 +18,7 @@ const links = [
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,15 +48,28 @@ export default function Navbar() {
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center space-x-8">
-          {links.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className="text-white/80 hover:text-femack-cyan transition-colors font-medium text-sm tracking-wide"
-            >
-              {link.name}
-            </Link>
-          ))}
+          {links.map((link) => {
+            const isActive = pathname === link.href;
+            return (
+              <Link
+                key={link.name}
+                href={link.href}
+                className={cn(
+                  "relative text-sm tracking-wide font-medium transition-colors py-1",
+                  isActive ? "text-femack-cyan" : "text-white/80 hover:text-white"
+                )}
+              >
+                {link.name}
+                {isActive && (
+                  <motion.div
+                    layoutId="navbar-active-indicator"
+                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-femack-cyan rounded-full"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
+              </Link>
+            );
+          })}
           <a
             href="/documents/Femack_Security_Handbook.pdf"
             target="_blank"
@@ -91,16 +106,22 @@ export default function Navbar() {
             className="md:hidden glass-dark border-t border-white/10 overflow-hidden"
           >
             <div className="flex flex-col px-4 py-4 space-y-4">
-              {links.map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="text-white/80 hover:text-white py-2 font-medium"
-                >
-                  {link.name}
-                </Link>
-              ))}
+              {links.map((link) => {
+                const isActive = pathname === link.href;
+                return (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={cn(
+                      "py-2 font-medium relative pl-4 border-l-2 transition-colors",
+                      isActive ? "text-femack-cyan border-femack-cyan bg-femack-cyan/10" : "text-white/80 hover:text-white border-transparent hover:border-white/20"
+                    )}
+                  >
+                    {link.name}
+                  </Link>
+                );
+              })}
               <a
                 href="/documents/Femack_Security_Handbook.pdf"
                 target="_blank"

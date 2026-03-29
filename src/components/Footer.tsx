@@ -55,7 +55,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center">
                 <MobileIcon className="w-5 h-5 mr-3 text-femack-cyan shrink-0" />
-                <span>+234 913 617 9900 <br className="md:hidden" /> / +234 802 323 1142</span>
+                <span>+234 913 617 9900, +234 802 323 1142</span>
               </li>
               <li className="flex items-center">
                 <EnvelopeClosedIcon className="w-5 h-5 mr-3 text-femack-cyan shrink-0" />
