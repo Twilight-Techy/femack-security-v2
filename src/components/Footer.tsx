@@ -35,6 +35,11 @@ export default function Footer() {
                 <Link href="/services" className="hover:text-femack-cyan transition-colors">Services</Link>
               </li>
               <li>
+                <a href="/documents/Femack_Security_Handbook.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-femack-cyan transition-colors">
+                  Company Handbook
+                </a>
+              </li>
+              <li>
                 <Link href="/contact" className="hover:text-femack-cyan transition-colors">Contact</Link>
               </li>
             </ul>
