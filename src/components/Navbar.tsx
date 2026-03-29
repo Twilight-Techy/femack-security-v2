@@ -42,6 +42,7 @@ export default function Navbar() {
             alt="Femack Security Limited"
             width={240}
             height={75}
+            priority
             className="w-auto h-14 md:h-16 object-contain"
           />
         </Link>
