@@ -24,7 +24,7 @@ export default function HomePage() {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative min-h-[100svh] lg:min-h-[90vh] flex flex-col justify-center pt-32 pb-16 lg:pt-32 lg:pb-20 overflow-hidden">
+      <section className="relative min-h-svh lg:min-h-[90vh] flex flex-col justify-center pt-32 pb-16 lg:pt-32 lg:pb-20 overflow-hidden">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <Image 

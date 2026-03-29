@@ -3,5 +3,6 @@
   "tailwindCSS.includeLanguages": {
     "typescriptreact": "html",
     "javascriptreact": "html"
-  }
+  },
+  "css.lint.unknownAtRules": "ignore"
 }
