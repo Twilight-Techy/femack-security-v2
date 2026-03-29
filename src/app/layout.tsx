@@ -15,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth" data-scroll-behavior="smooth">
       <body className={`${outfit.className} min-h-screen flex flex-col antialiased bg-femack-navy text-foreground`}>
         <main className="flex-1 bg-background">
           {children}

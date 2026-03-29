@@ -6,11 +6,11 @@ import ServiceCard from "@/components/ServiceCard";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { 
-  LockClosedIcon, 
-  EyeOpenIcon, 
-  PersonIcon, 
-  GlobeIcon, 
+import {
+  LockClosedIcon,
+  EyeOpenIcon,
+  PersonIcon,
+  GlobeIcon,
   MagnifyingGlassIcon,
   VideoIcon,
   ArrowRightIcon,
@@ -22,15 +22,16 @@ export default function HomePage() {
   return (
     <>
       <Navbar />
-      
+
       {/* Hero Section */}
       <section className="relative min-h-svh lg:min-h-[90vh] flex flex-col justify-center pt-32 pb-16 lg:pt-32 lg:pb-20 overflow-hidden">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
-          <Image 
-            src="/images/security-1.png" 
-            alt="Security Background" 
-            fill 
+          <Image
+            src="/images/security-1.png"
+            alt="Security Background"
+            fill
+            sizes="100vw"
             className="object-cover"
             priority
           />
@@ -39,14 +40,14 @@ export default function HomePage() {
         </div>
 
         <div className="container mx-auto px-4 md:px-6 relative z-10 flex-1 flex items-center">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="max-w-3xl relative z-20 w-full"
           >
             <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight">
-              YOUR SAFETY, <br/><span className="text-femack-cyan">OUR PRIORITY!</span>
+              YOUR SAFETY, <br /><span className="text-femack-cyan">OUR PRIORITY!</span>
             </h1>
             <p className="text-lg md:text-xl text-white/80 mb-10 leading-relaxed max-w-2xl">
               Femack Security Limited is a premier security services provider headquartered in Lagos. We deliver comprehensive solutions integrating advanced technology and highly trained personnel to protect your lives, assets, and reputation.
@@ -61,7 +62,7 @@ export default function HomePage() {
             </div>
 
             {/* Mobile-Only Feature Highlights */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
@@ -88,11 +89,11 @@ export default function HomePage() {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-femack-cyan/20 rounded-full blur-[80px]"></div>
 
             {/* Card 1 */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="absolute top-[10%] left-[5%] glass border border-white/20 p-6 rounded-2xl shadow-2xl w-64 backdrop-blur-md"
+              className="absolute top-[8%] left-[5%] glass border border-white/20 p-6 rounded-2xl shadow-2xl w-64 backdrop-blur-md z-10"
             >
               <div className="flex items-center gap-4 mb-1">
                 <div className="w-12 h-12 rounded-full bg-femack-cyan/20 flex items-center justify-center text-femack-cyan shrink-0">
@@ -106,11 +107,11 @@ export default function HomePage() {
             </motion.div>
 
             {/* Card 2 */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="absolute bottom-[10%] left-[15%] glass border border-white/20 p-6 rounded-2xl shadow-2xl w-[300px] backdrop-blur-md z-10"
+              className="absolute top-[54%] left-[10%] glass border border-white/20 p-6 rounded-2xl shadow-2xl w-[300px] backdrop-blur-md z-30"
             >
               <div className="flex items-start gap-4">
                 <div className="relative shrink-0">
@@ -130,11 +131,11 @@ export default function HomePage() {
             </motion.div>
 
             {/* Card 3 */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="absolute top-[35%] right-[0%] glass border border-femack-cyan/30 bg-femack-navy/60 p-6 rounded-2xl shadow-2xl w-56 backdrop-blur-md"
+              className="absolute top-[24%] right-[5%] glass border border-femack-cyan/30 bg-femack-navy/60 p-6 rounded-2xl shadow-2xl w-64 backdrop-blur-md z-20"
             >
               <h3 className="text-4xl font-extrabold text-femack-cyan mb-2">100%</h3>
               <p className="text-white font-bold text-lg leading-tight mb-1">Fully Licensed</p>
@@ -148,7 +149,7 @@ export default function HomePage() {
       <section className="py-24 bg-background relative overflow-hidden">
         {/* Decorative elements */}
         <div className="absolute top-0 right-0 w-1/3 h-full bg-femack-cyan/5 blur-3xl rounded-full transform translate-x-1/2 -translate-y-1/2"></div>
-        
+
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
@@ -158,10 +159,11 @@ export default function HomePage() {
               transition={{ duration: 0.8 }}
             >
               <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-4/3">
-                <Image 
-                  src="/images/security-2.png" 
-                  alt="Femack Team" 
-                  fill 
+                <Image
+                  src="/images/security-2.png"
+                  alt="Femack Team"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover"
                 />
                 <div className="absolute inset-0 bg-linear-to-tr from-femack-navy/80 to-transparent"></div>
@@ -173,7 +175,7 @@ export default function HomePage() {
                 </div>
               </div>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -192,16 +194,16 @@ export default function HomePage() {
               <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-lg mb-8">
                 Instead, we take time to understand the unique needs of each client and provide tailored strategies that blend human expertise with cutting-edge technology.
               </p>
-              
+
               <ul className="space-y-4 mb-8">
                 {[
-                  "Professionalism & Elite Training", 
-                  "Integrity & Transparency", 
+                  "Professionalism & Elite Training",
+                  "Integrity & Transparency",
                   "Advanced Technology Integration",
                   "24/7 Rapid Response"
                 ].map((item, i) => (
                   <li key={i}>
-                    <motion.div 
+                    <motion.div
                       initial={{ opacity: 0, y: 10 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
@@ -241,44 +243,44 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <ServiceCard 
+            <ServiceCard
               title="Corporate & Private Security"
               description="Deploying highly trained security guards and VIP close-protection personnel to safeguard your enterprises and high-profile individuals."
               icon={<LockClosedIcon className="w-7 h-7" />}
               delay={0.1}
             />
-            <ServiceCard 
+            <ServiceCard
               title="Employee Background Checks"
               description="Mitigate risk with deep pre/post-employment screening, criminal records search, credential validation, and social media analysis."
               icon={<MagnifyingGlassIcon className="w-7 h-7" />}
               delay={0.2}
             />
-            <ServiceCard 
+            <ServiceCard
               title="Electronic Surveillance"
               description="Advanced HD CCTV, thermal imaging, alarm systems, and biometric access controls integrated into cutting-edge command centers."
               icon={<VideoIcon className="w-7 h-7" />}
               delay={0.3}
             />
-            <ServiceCard 
+            <ServiceCard
               title="Event & Industrial Security"
               description="Expert crowd control strategies, access management, and critical infrastructure protection for entertainment and industries."
               icon={<PersonIcon className="w-7 h-7" />}
               delay={0.4}
             />
-            <ServiceCard 
+            <ServiceCard
               title="Detective & Investigation"
               description="Skilled investigators providing discreet intelligence gathering, background profiling, and special corporate investigations."
               icon={<EyeOpenIcon className="w-7 h-7" />}
               delay={0.5}
             />
-            <ServiceCard 
+            <ServiceCard
               title="Security Training Programs"
               description="Accredited training for security personnel in conflict management, surveillance techniques, first aid, and fire safety protocols."
               icon={<GlobeIcon className="w-7 h-7" />}
               delay={0.6}
             />
           </div>
-          
+
           <div className="mt-16 text-center">
             <Link href="/services" className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-transparent border-2 border-femack-cyan text-femack-cyan font-bold rounded-full hover:bg-femack-cyan hover:text-white transition-colors duration-300">
               View All Services <ArrowRightIcon className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -290,25 +292,25 @@ export default function HomePage() {
       {/* Stats/Why Choose Us */}
       <section className="relative py-24 bg-femack-navy overflow-hidden">
         <div className="absolute inset-0">
-          <Image src="/images/security-4.png" alt="Overlay" fill className="object-cover opacity-20" />
+          <Image src="/images/security-4.png" alt="Overlay" fill sizes="100vw" className="object-cover opacity-20" />
         </div>
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center divide-y lg:divide-y-0 lg:divide-x divide-white/10">
             <div className="py-6 lg:py-0 px-4">
               <div className="text-4xl md:text-5xl font-black text-femack-cyan mb-2">150+</div>
-              <div className="text-white font-medium tracking-wide uppercase text-sm">Countries Covered<br/>in Screenings</div>
+              <div className="text-white font-medium tracking-wide uppercase text-sm">Countries Covered<br />in Screenings</div>
             </div>
             <div className="py-6 lg:py-0 px-4">
               <div className="text-4xl md:text-5xl font-black text-femack-cyan mb-2">24/7</div>
-              <div className="text-white font-medium tracking-wide uppercase text-sm">Monitoring &<br/>Rapid Response</div>
+              <div className="text-white font-medium tracking-wide uppercase text-sm">Monitoring &<br />Rapid Response</div>
             </div>
             <div className="py-6 lg:py-0 px-4">
               <div className="text-4xl md:text-5xl font-black text-femack-cyan mb-2">100%</div>
-              <div className="text-white font-medium tracking-wide uppercase text-sm">Customized<br/>Security Plans</div>
+              <div className="text-white font-medium tracking-wide uppercase text-sm">Customized<br />Security Plans</div>
             </div>
             <div className="py-6 lg:py-0 px-4">
               <div className="text-4xl md:text-5xl font-black text-femack-cyan mb-2">RC</div>
-              <div className="text-white font-medium tracking-wide uppercase text-sm">Fully Licensed &<br/>Accredited</div>
+              <div className="text-white font-medium tracking-wide uppercase text-sm">Fully Licensed &<br />Accredited</div>
             </div>
           </div>
         </div>
