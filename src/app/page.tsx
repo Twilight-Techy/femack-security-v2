@@ -165,6 +165,7 @@ export default function HomePage() {
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover"
+                  priority
                 />
                 <div className="absolute inset-0 bg-linear-to-tr from-femack-navy/80 to-transparent"></div>
                 <div className="absolute bottom-6 left-6 right-6">
